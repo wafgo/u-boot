@@ -29,6 +29,60 @@ config TARGET_S32G2XXAEVB
 	imply USB_ULPI
 	select NXP_S32GEVB_BOARD
 
+config TARGET_ADC435_BASEBOARD_S32G2
+	bool "Support ADC435_BASEBOARD_S32G2 board"
+	help
+	  This board is based on S32G2 family of SoCs. It is equipped with
+	  4 GB of RAM, 128MB of QSPI memory, PCIe slot, USB, serial port.
+	select MISC_INIT_R
+	select SPI_FLASH_MACRONIX
+	select SPI_FLASH_STMICRO
+	imply DM_USB
+	imply SAF1508BET_USB_PHY
+	imply USB
+	imply USB_EHCI_HCD
+	imply USB_ULPI
+	imply ADC
+	imply CMD_E1000
+	imply CMD_EEPROM
+	imply CMD_PMIC
+	imply CMD_PCI
+	imply DM_PMIC
+	imply DM_PMIC_VR5510
+	imply E1000
+	imply I2C_EEPROM
+	imply NXP_S32CC_BOARD_COMMON
+	imply PHY
+	imply PHY_AQUANTIA
+	imply PHY_MICREL
+	imply PHY_MICREL_KSZ90X1
+	imply RGMII
+	imply SARADC_S32CC
+	imply SJA1105
+	
+	imply CMD_ADC
+	imply CMD_CACHE
+	imply CMD_CLK
+	imply CMD_CPU
+	imply CMD_DM
+	imply CMD_FUSE
+	imply CMD_GPIO
+	imply CMD_I2C
+	imply CMD_MD5SUM
+	imply CMD_MEMTEST
+	imply CMD_MMC
+	imply CMD_PCI
+	imply CMD_SMC
+	imply CMD_SPI
+	imply CMD_TIMER
+	imply FIT
+	imply MD5SUM_VERIFY
+	imply NET_RANDOM_ETHADDR
+	imply PHY_FIXED
+	imply USE_BOOTARGS
+
+
+
 config TARGET_S32G2XXAEVB3
 	bool "Support S32G2-EVB3 board"
 	help
@@ -71,5 +125,6 @@ source "board/nxp/s32g2xxaevb/Kconfig"
 source "board/nxp/s32g2xxaevb3/Kconfig"
 source "board/nxp/s32g274abluebox3/Kconfig"
 source "board/nxp/s32g274aemu/Kconfig"
+source "board/continental/adc435_baseboard_s32g2/Kconfig"
 
 endif

@@ -392,7 +392,7 @@ static int init_sgmii_phy(struct udevice *dev)
 
 	phy_speed = s32_serdes_get_lane_speed(xpcs_phy.dev, xpcs_phy.id);
 	if (phy_speed < 0) {
-		dev_err(dev, "Failed to get speed of XPCS for 'gmac_xpcs'");
+		dev_err(dev, "Failed to get speed of XPCS for 'gmac_xpcs'\n");
 		return ret;
 	}
 

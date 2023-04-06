@@ -690,7 +690,7 @@ static int init_xpcs(struct pfeng_priv *priv)
 		phy_speed = s32_serdes_get_lane_speed(priv->xpcs[i].dev,
 						      priv->xpcs[i].id);
 		if (phy_speed < 0) {
-			dev_err(dev, "Failed to get speed of XPCS for %s",
+			dev_err(dev, "Failed to get speed of XPCS for %s\n",
 				xpcs_name);
 			return ret;
 		}

@@ -8,6 +8,7 @@
 #include <spi-mem.h>
 
 #define MT35XU512ABA_ID	0x2c5b1a
+#define MT35XU01GBBA_ID	0x2c5b1b
 #define MX25UW51245G_ID 0xc2813a
 
 #define SPI_NOR_MAX_ID_LEN        6
@@ -148,6 +149,7 @@ int s32cc_mem_enable_ddr(struct fsl_qspi_priv *priv,
 		macronix_get_ddr_config(ddr_config);
 		return macronix_mem_enable_ddr(priv);
 	case MT35XU512ABA_ID:
+	case MT35XU01GBBA_ID:
 		micron_get_ddr_config(ddr_config);
 		return micron_mem_enable_ddr(priv);
 	default:

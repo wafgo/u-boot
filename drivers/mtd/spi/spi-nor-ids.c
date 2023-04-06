@@ -189,6 +189,13 @@ const struct flash_info spi_nor_ids[] = {
 	{ INFO("mt35xu512aba", 0x2c5b1a, 0,  128 * 1024,  512, USE_FSR |
 			SPI_NOR_4B_OPCODES | SPI_NOR_OCTAL_DTR_READ |
 			SECT_4K) },
+	{ INFO("mt35xu512aba", 0x2c5b1a, 0,  128 * 1024,  512, USE_FSR |
+			SPI_NOR_4B_OPCODES | SPI_NOR_OCTAL_DTR_READ |
+			SECT_4K) },
+	{ INFO("mt35xu01gbba1g12", 0x2c5b1b, 0,  256 * 1024,  512, USE_FSR |
+			SPI_NOR_4B_OPCODES | SPI_NOR_OCTAL_DTR_READ |
+			SECT_4K) },
+	
 	{ INFO("mt35xu02g",  0x2c5b1c, 0, 128 * 1024,  2048, USE_FSR | SPI_NOR_4B_OPCODES) },
 #endif
 #ifdef CONFIG_SPI_FLASH_SPANSION	/* SPANSION */
