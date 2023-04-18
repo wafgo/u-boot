@@ -36,6 +36,11 @@ static u32 emac_intf[PFENG_EMACS_COUNT] = {
 	PHY_INTERFACE_MODE_NONE, /* disabled */
 	PHY_INTERFACE_MODE_NONE  /* disabled */
 #endif
+#if CONFIG_IS_ENABLED(TARGET_ADC435_BASEBOARD_S32G2)
+	PHY_INTERFACE_MODE_NONE, /* disabled */
+	PHY_INTERFACE_MODE_NONE, /* disabled */
+	PHY_INTERFACE_MODE_RGMII  /* RGMII over RTL9072 */
+#endif	
 };
 
 static u32 pfeng_mode = PFENG_MODE_DISABLE;
@@ -156,11 +161,11 @@ static void set_clock_freq(const char *tx, const char *rx,
 
 	rate = s32gen1_set_dev_clk_rate(tx, pfe_dev, tx_freq);
 	if (rate != tx_freq)
-		dev_err(pfe_dev, "Failed to set the frequency of %s\n", tx);
+	    dev_err(pfe_dev, "Failed to set the frequency of %s to %lu (%lu)\n", tx, tx_freq, rate);
 
 	rate = s32gen1_set_dev_clk_rate(rx, pfe_dev, rx_freq);
 	if (rate != rx_freq)
-		dev_err(pfe_dev, "Failed to set the frequency of %s\n", rx);
+	    dev_err(pfe_dev, "Failed to set the frequency of %s to %lu (%lu)\n", rx, rx_freq, rate);
 }
 
 static void enable_clocks(const char *tx, const char *rx,

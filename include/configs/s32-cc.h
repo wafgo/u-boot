@@ -124,13 +124,16 @@
 #  define XEN_EXTRA_ENV_SETTINGS  ""
 #endif
 
+#ifndef PRINTK_TTY
+#define PRINTK_TTY "ttyLF0"
+#endif
 #define S32CC_ENV_SETTINGS \
 	BOOTENV \
 	"boot_fdt=try\0" \
 	"boot_mtd=booti\0" \
 	"bootscript=echo Running bootscript from mmc ...; " \
 		"source\0" \
-	"console=ttyLF0\0" \
+	"console="PRINTK_TTY"\0" \
 	"fdt_addr=" __stringify(S32CC_FDT_ADDR) "\0" \
 	"fdt_enable_hs400es=" \
 		"fdt addr ${fdt_addr}; " \
@@ -212,6 +215,7 @@
 		"nfsroot=${serverip}:/tftpboot/rfs,nolock,v3,tcp " \
 		"earlycon " EXTRA_BOOT_ARGS "\0" \
 	"ramdisk_addr=" __stringify(S32CC_RAMDISK_ADDR) "\0" \
+        "pfengfw=mtd@0x3000000:s32g_pfe_class.fw\0" \
 	"script=boot.scr\0" \
 	"serverip=10.0.0.1\0" \
 	"update_sd_firmware_filename=fip.s32\0" \

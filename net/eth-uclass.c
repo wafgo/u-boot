@@ -424,7 +424,7 @@ int eth_initialize(void)
 				if (num_devices)
 					printf(", ");
 
-				printf("eth%d: %s", dev->seq, dev->name);
+				printf("eth%d: %s\n", dev->seq, dev->name);
 
 				if (ethprime && dev == prime_dev)
 					printf(" [PRIME]");

@@ -4,6 +4,8 @@
  */
 #pragma once
 
+#define PRINTK_TTY "ttyLF1"
+
 #include <configs/s32g2.h>
 
 #define EXTRA_BOOTCOMMAND		PFE_INIT_CMD
@@ -11,8 +13,8 @@
 #define FDT_FILE			"adc435_base.dtb"
 
 #ifdef CONFIG_FSL_PFENG
-#  define PFENG_MODE			"enable,sgmii,sgmii,rgmii"
-#  define PFENG_EMAC			"0"
+#  define PFENG_MODE			"enable,none,none,rgmii"
+#  define PFENG_EMAC			"2"
 #endif
 
 
