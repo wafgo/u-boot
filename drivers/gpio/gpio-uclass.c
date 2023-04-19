@@ -2,7 +2,7 @@
 /*
  * Copyright (c) 2013 Google, Inc
  */
-
+#define DEBUG 1
 #include <common.h>
 #include <dm.h>
 #include <dm/device-internal.h>
