@@ -29,8 +29,8 @@ config TARGET_S32G2XXAEVB
 	imply USB_ULPI
 	select NXP_S32GEVB_BOARD
 
-config TARGET_ADC435_BASEBOARD_S32G2
-	bool "Support ADC435_BASEBOARD_S32G2 board"
+config TARGET_HDK11_S32G2
+	bool "Support for Continental Cadge HDK11 S32G2 board"
 	help
 	  This board is based on S32G2 family of SoCs. It is equipped with
 	  4 GB of RAM, 128MB of QSPI memory, PCIe slot, USB, serial port.
@@ -125,6 +125,6 @@ source "board/nxp/s32g2xxaevb/Kconfig"
 source "board/nxp/s32g2xxaevb3/Kconfig"
 source "board/nxp/s32g274abluebox3/Kconfig"
 source "board/nxp/s32g274aemu/Kconfig"
-source "board/continental/adc435_baseboard_s32g2/Kconfig"
+source "board/continental/hdk11_s32g2/Kconfig"
 
 endif

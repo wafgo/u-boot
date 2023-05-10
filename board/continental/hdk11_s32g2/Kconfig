@@ -2,13 +2,13 @@ config SYS_VENDOR
 	string
 	default "continental"
 
-if TARGET_ADC435_BASEBOARD_S32G2
+if TARGET_HDK11_S32G2
 	
 config SYS_CONFIG_NAME
-	default "adc435_baseboard_s32g2"
+	default "hdk11_s32g2"
 
 config SYS_BOARD
-	default "adc435_baseboard_s32g2"
+	default "hdk11_s32g2"
 
 config NR_DRAM_BANKS
 	default 2
