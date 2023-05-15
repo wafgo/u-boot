@@ -7,6 +7,10 @@
 
 #include <configs/s32-cc.h>
 
+#ifndef BOARD_EXTRA_ENV_SETTINGS
+#define BOARD_EXTRA_ENV_SETTINGS 
+#endif
+
 #ifdef CONFIG_FSL_PFENG
 #  define PFE_EXTRA_BOOT_ARGS "nohz=off coherent_pool=64M"
 #  define PFE_EXTRA_ENV_SETTINGS \
@@ -26,6 +30,7 @@
 #define CONFIG_EXTRA_ENV_SETTINGS \
 	S32CC_ENV_SETTINGS \
 	PFE_EXTRA_ENV_SETTINGS \
+	BOARD_EXTRA_ENV_SETTINGS
 
 #define GMAC1_ENABLE_VAR_VALUE ""
 
