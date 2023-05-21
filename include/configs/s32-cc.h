@@ -219,7 +219,7 @@
 		"nfsroot=${serverip}:/tftpboot/rfs,nolock,v3,tcp " \
 		"earlycon " EXTRA_BOOT_ARGS "\0" \
 	"ramdisk_addr=" __stringify(S32CC_RAMDISK_ADDR) "\0" \
-        "pfengfw=mtd@0x3000000:s32g_pfe_class.fw\0" \
+        "pfengfw=mtd@0x800000:s32g_pfe_class.fw\0" \
 	"script=boot.scr\0" \
 	"serverip=10.0.0.1\0" \
 	"update_sd_firmware_filename=fip.s32\0" \
