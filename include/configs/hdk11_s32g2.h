@@ -6,6 +6,7 @@
 
 #define PRINTK_TTY "ttyLF1"
 #define S32CC_BOARD_SPECIFIC_IP         "192.168.0.144"
+#define PCIE_EXTRA_ENV_SETTINGS "hwconfig=serdes0:mode=pcie,clock=ext;pcie0:mode=rc;serdes1:mode=pcie,clock=int;pcie1:mode=ep\0"
 
 #define BOARD_EXTRA_ENV_SETTINGS "mmcboot_hdk=pfeng stop; echo Booting from qspi using emmc root partition ...; "    \
 		                 "run mmcargs; " \
